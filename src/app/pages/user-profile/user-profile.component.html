@@ -1,0 +1,201 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-danger opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-7 col-md-10">
+        <h1 class="display-2 text-white">Olá Jesse</h1>
+        <p class="text-white mt-0 mb-5">Esta é a sua página de perfil. Você pode acompanhar o progresso do seu trabalho e gerenciar suas informações para futuros projetos.</p>
+        <a href="#!" class="btn btn-info">Candidatar-se</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      <div class="card card-profile shadow">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 order-lg-2">
+            <div class="card-profile-image">
+              <a href="javascript:void(0)">
+                <img src="assets/img/theme/team-4-800x800.jpg" class="rounded-circle">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+          <div class="d-flex justify-content-between">
+            <!--a href="javascript:void(0)" class="btn btn-sm btn-info mr-4">Connect</a-->
+            <!--a href="javascript:void(0)" class="btn btn-sm btn-default float-right">Message</a-->
+          </div>
+        </div>
+        <div class="card-body pt-0 pt-md-4">
+          <div class="row">
+            <div class="col">
+              <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                <!-- Não apagar para não quebrar a estrutura da pagina-->
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <h3>
+              Jessica Jones
+            </h3>
+            <div class="h5 font-weight-300">
+              <i class="ni location_pin mr-2"></i>São Paulo, SP
+            </div>
+            
+            <hr class="my-4" />
+            <p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.</p>
+            <a href="javascript:void(0)">Show more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">Minha Conta</h3>
+            </div>            
+          </div>
+        </div>
+        <div class="card-body">
+          <form #formulario="ngForm" (ngSubmit)="submit(formulario)">
+            <h6 class="heading-small text-muted mb-4">Informações do Usuário</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">CPF*</label>
+                    <input [ngModel]="formulario.name" #cpf="ngModel" name="cpf" type="text" class="form-control form-control-alternative" placeholder="Nome de Usuário" required>
+                    <div *ngIf="!cpf.valid && cpf.touched">
+                      <span class="badge badge-pill badge-danger">CPF é obrigatório.</span>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email*</label>                    
+                    <input [ngModel]="formulario.name" #email="ngModel" name="email" type="email" class="form-control form-control-alternative" placeholder="email@example.com" required>
+                    <div *ngIf="!email.valid && email.touched">
+                      <span class="badge badge-pill badge-danger">Email é obrigatório.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-first-name">Nome Completo*</label>
+                    <input [ngModel]="formulario.name" #nomeCompleto="ngModel" name="nomeCompleto" type="text" class="form-control form-control-alternative" placeholder="Nome Completo" required>
+                    <div *ngIf="!nomeCompleto.valid && nomeCompleto.touched">
+                      <span class="badge badge-pill badge-danger">Nome Completo é obrigatório.</span>
+                    </div>
+                  </div>
+                </div>                
+              </div>
+            </div>
+            <hr class="my-4" />
+            <!-- Address -->
+            <h6 class="heading-small text-muted mb-4">Informações de Contato</h6>
+            <div ngModelGroup="endereco">
+              <div class="pl-lg-4">
+                <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-country">CEP*</label>
+                    <input [ngModel]="formulario.name" #cep="ngModel" name="cep" type="number" class="form-control form-control-alternative" placeholder="CEP" required>
+                    <div *ngIf="!cep.valid && cep.touched">
+                      <span class="badge badge-pill badge-danger">CEP é obrigatório.</span>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-address">Endereço*</label>
+                      <input [ngModel]="formulario.name" #endereco="ngModel" name="endereco" class="form-control form-control-alternative" placeholder="Endereço" type="text" required>
+                      <div *ngIf="!endereco.valid && endereco.touched">
+                        <span class="badge badge-pill badge-danger">Endereço é obrigatório.</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-city">Número*</label>
+                      <input [ngModel]="formulario.name" #numero="ngModel" name="numero" type="text" class="form-control form-control-alternative" placeholder="Número" required>
+                      <div *ngIf="!numero.valid && numero.touched">
+                        <span class="badge badge-pill badge-danger">Número é obrigatório.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-city">Complemento</label>
+                      <input [ngModel]="formulario.name" #complemento="ngModel" name="complemento" type="text" class="form-control form-control-alternative" placeholder="Complemento">
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-city">Cidade*</label>
+                      <input [ngModel]="formulario.name" #cidade="ngModel" name="cidade" type="text" class="form-control form-control-alternative" placeholder="Cidade" required>
+                      <div *ngIf="!cidade.valid && cidade.touched">
+                        <span class="badge badge-pill badge-danger">Cidade é obrigatório.</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-country">Estado*</label>
+                      <input [ngModel]="formulario.name" #estado="ngModel" name="estado" type="text" class="form-control form-control-alternative" placeholder="Estado" required>
+                      <div *ngIf="!estado.valid && estado.touched">
+                        <span class="badge badge-pill badge-danger">Estado é obrigatório.</span>
+                      </div>
+                    </div>
+                  </div>    
+                </div>                
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-last-name">Primeiro Telefone*</label>
+                        <input [ngModel]="formulario.name" #telefone1="ngModel" name="telefone1" type="text" class="form-control form-control-alternative" placeholder="Primeiro Telefone" required>
+                        <div *ngIf="!telefone1.valid && telefone1.touched">
+                          <span class="badge badge-pill badge-danger">Primeiro Telefone é obrigatório.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-last-name">Segundo Telefone</label>
+                        <input [ngModel]="formulario.name" #telefone2="ngModel" name="telefone2" type="text" class="form-control form-control-alternative" placeholder="Segundo Telefone">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <hr class="my-4" />
+            <!-- Description -->
+            <h6 class="heading-small text-muted mb-4">Sobre Mim</h6>
+            <div class="pl-lg-4">
+              <div class="form-group">
+                <label>Sobre Mim</label>
+                <textarea rows="4" class="form-control form-control-alternative" placeholder="Algumas breves palavras sobre você ..."></textarea>               
+              </div>
+            </div>
+
+            <button [disabled]="!formulario.valid" type="submit" class="btn btn-primary btn-lg btn-block">Salvar Informações</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
