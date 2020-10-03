@@ -1,7 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 import { VoluntariosService } from './../../services/voluntarios.service';
+import { AlertModalService } from 'src/app/shared/alert-modal.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -13,7 +15,8 @@ export class UserProfileComponent implements OnInit {
   formulario: FormGroup;
 
   constructor(
-    private voluntarioService: VoluntariosService
+    private voluntarioService: VoluntariosService,
+    private alertService: AlertModalService
     ) { }
 
   ngOnInit() {
@@ -33,8 +36,8 @@ export class UserProfileComponent implements OnInit {
 
   submit(formulario){
     this.voluntarioService.criaVoluntario(formulario.value).subscribe(
-      success => console.log('sucesso gravou'),
-      error => console.error(error)
+      success => this.alertService.showAlertSuccess('Sucesso!', 'Informações Salvas com Sucesso!'),
+      error => this.alertService.showAlertDanger('Ops!', 'Não foi possível salvar as informações')
     );
   }
 }
