@@ -1,8 +1,11 @@
 import { BsModalRef } from 'ngx-bootstrap/modal';
 
+import { Component, OnInit } from '@angular/core';
 
-import { Component, OnInit, Input } from '@angular/core';
-import { Subject } from 'rxjs';
+declare interface Necessidade {
+  id: number;
+  descricao: string;
+}
 
 @Component({
   selector: 'app-confirm-modal',
@@ -11,15 +14,31 @@ import { Subject } from 'rxjs';
 })
 export class ConfirmModalComponent implements OnInit {
 
+  necessidades: Necessidade[];
+  /*
   @Input() title: string;
   @Input() msg: string;
   @Input() cancelText = 'Cancelar';
   @Input() okText = 'Ok';
 
   confirmResult: Subject<boolean>;
-
+  */
   constructor(public bsModalRef: BsModalRef) { }
 
+  ngOnInit(): void {
+
+    this.necessidades = [
+      { id: 1, descricao: 'Cortar Cabelos Masculinos'},
+      { id: 2, descricao: 'Passear com Cachorro'},
+      { id: 3, descricao: 'Pintar parede'},
+      { id: 4, descricao: 'Aulas de Violão'},
+      { id: 5, descricao: 'Cuidar de idoso'},
+      { id: 6, descricao: 'Odontologia'},
+    ];
+
+  }
+
+  /*
   ngOnInit(): void {
     this.confirmResult = new Subject();
   }
@@ -35,5 +54,5 @@ export class ConfirmModalComponent implements OnInit {
   private confirmAndClose(value: boolean){
     this.confirmResult.next(value);
     this.bsModalRef.hide();
-  }
+  }*/
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { BsModalService } from 'ngx-bootstrap/modal';
 import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
 import { AlertComponent } from './alert/alert.component';
 
@@ -34,6 +34,7 @@ export class AlertModalService {
     this.showAlert(msgControle, msg, AlertTypes.SUCCESS);
   }
 
+  /* Vai tombar
   showModal(title: string, msg: string, okText?: string, cancelText?: string){
     const bsModalRef: BsModalRef = this.modalService.show(ConfirmModalComponent);
     bsModalRef.content.title = title;
@@ -48,5 +49,9 @@ export class AlertModalService {
     }
 
     return (<ConfirmModalComponent>bsModalRef.content).confirmResult;
+  }*/
+
+  mostraModalNecessidades(){
+    this.modalService.show(ConfirmModalComponent);
   }
 }

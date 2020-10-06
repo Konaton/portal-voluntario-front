@@ -16,7 +16,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { EntidadesComponent } from './pages/entidades/entidades.component';
 import { ConfirmModalComponent } from './shared/confirm-modal/confirm-modal.component';
 import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
 import { AlertComponent } from './shared/alert/alert.component';
@@ -50,8 +49,7 @@ const firebaseConfig = {
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent,
-    EntidadesComponent,
+    AuthLayoutComponent,    
     ConfirmModalComponent,
     AlertComponent
   ],

@@ -13,11 +13,12 @@ import { AlertModalService } from 'src/app/shared/alert-modal.service';
 export class UserProfileComponent implements OnInit {
 
   formulario: FormGroup;
-
+  
   constructor(
     private voluntarioService: VoluntariosService,
-    private alertService: AlertModalService
-    ) { }
+    private alertService: AlertModalService    
+    ) {
+    }
 
   ngOnInit() {
     this.formulario = new FormGroup({
@@ -39,5 +40,9 @@ export class UserProfileComponent implements OnInit {
       success => this.alertService.showAlertSuccess('Sucesso!', 'Informações Salvas com Sucesso!'),
       error => this.alertService.showAlertDanger('Ops!', 'Não foi possível salvar as informações')
     );
+  }
+
+  mostraModalNecessidades(){
+    this.alertService.mostraModalNecessidades();
   }
 }

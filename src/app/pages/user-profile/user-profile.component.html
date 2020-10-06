@@ -166,8 +166,8 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-last-name">Primeiro Telefone*</label>
-                        <input [ngModel]="formulario.name" #telefone1="ngModel" name="telefone1" type="text" class="form-control form-control-alternative" placeholder="Primeiro Telefone" required>
-                        <div *ngIf="!telefone1.valid && telefone1.touched">
+                        <input [ngModel]="formulario.name" #primeiroTelefone="ngModel" name="primeiroTelefone" type="text" class="form-control form-control-alternative" placeholder="Primeiro Telefone" required>
+                        <div *ngIf="!primeiroTelefone.valid && primeiroTelefone.touched">
                           <span class="badge badge-pill badge-danger">Primeiro Telefone é obrigatório.</span>
                         </div>
                       </div>
@@ -175,12 +175,17 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-last-name">Segundo Telefone</label>
-                        <input [ngModel]="formulario.name" #telefone2="ngModel" name="telefone2" type="text" class="form-control form-control-alternative" placeholder="Segundo Telefone">
+                        <input [ngModel]="formulario.name" #segundoTelefone="ngModel" name="segundoTelefone" type="text" class="form-control form-control-alternative" placeholder="Segundo Telefone">
                       </div>
                     </div>
                   </div>
                 </div>
             </div>
+            <hr class="my-4" />
+
+            <h6 class="heading-small text-muted mb-4">Selecione os tipos de voluntariados</h6>
+            <button (click)="mostraModalNecessidades()" type="button" class="btn btn-danger btn-lg btn-block">Tipos de voluntariados</button>            
+
             <hr class="my-4" />
             <!-- Description -->
             <h6 class="heading-small text-muted mb-4">Sobre Mim</h6>
